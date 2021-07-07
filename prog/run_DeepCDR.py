@@ -4,10 +4,10 @@ import numpy as np
 import csv
 from scipy import stats
 import time
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
-from sklearn.metrics import roc_auc_score
-from sklearn import preprocessing
+# from sklearn.model_selection import train_test_split
+# from sklearn import metrics
+# from sklearn.metrics import roc_auc_score
+# from sklearn import preprocessing
 import pandas as pd
 import keras.backend as K
 from keras.models import Model, Sequential
@@ -62,7 +62,7 @@ TCGA_label_set = ["ALL","BLCA","BRCA","CESC","DLBC","LIHC","LUAD",
 DPATH = '../data'
 Drug_info_file = '%s/GDSC/1.Drug_listMon Jun 24 09_00_55 2019.csv'%DPATH
 Cell_line_info_file = '%s/CCLE/Cell_lines_annotations_20181226.txt'%DPATH
-Drug_feature_file = '%s/GDSC/drug_graph_feat'%DPATH
+Drug_feature_file = '%s/GDSC/drug_graph_feat/drug_graph_feat'%DPATH
 Genomic_mutation_file = '%s/CCLE/genomic_mutation_34673_demap_features.csv'%DPATH
 Cancer_response_exp_file = '%s/CCLE/GDSC_IC50.csv'%DPATH
 Gene_expression_file = '%s/CCLE/genomic_expression_561celllines_697genes_demap_features.csv'%DPATH
@@ -222,7 +222,7 @@ class MyCallback(Callback):
     def on_epoch_end(self, epoch, logs={}):
         y_pred_val = self.model.predict(self.x_val)
         pcc_val = pearsonr(self.y_val, y_pred_val[:,0])[0]
-        print 'pcc-val: %s' % str(round(pcc_val,4))
+        print('pcc-val: %s' % str(round(pcc_val,4)))
         if pcc_val > self.best:
             self.best = pcc_val
             self.wait = 0
