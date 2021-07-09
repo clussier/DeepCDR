@@ -15,7 +15,7 @@ from layers.graph import GraphLayer,GraphConv
       
         
 class KerasMultiSourceGCNModel(object):
-    def __init__(self,use_mut,use_gexp,use_methy,regr=True):#
+    def __init__(self,use_mut,use_gexp,use_methy,regr=True):#Boolean variables
         self.use_mut = use_mut
         self.use_gexp = use_gexp
         self.use_methy = use_methy

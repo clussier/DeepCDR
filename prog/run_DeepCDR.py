@@ -4,10 +4,10 @@ import numpy as np
 import csv
 from scipy import stats
 import time
-# from sklearn.model_selection import train_test_split
-# from sklearn import metrics
-# from sklearn.metrics import roc_auc_score
-# from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn import metrics
+from sklearn.metrics import roc_auc_score
+from sklearn import preprocessing
 import pandas as pd
 import keras.backend as K
 from keras.models import Model, Sequential
